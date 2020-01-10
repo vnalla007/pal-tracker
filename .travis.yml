@@ -13,10 +13,12 @@ jobs:
       language: java
       jdk: openjdk11
       install: skip
+      before_install:
+        - chmod +x gradlew
       script: ./gradlew clean build
       before_deploy:
-        - git config --local user.name "Travis CI"
-        - git config --local user.email "travis@example.com"
+        - git config --local user.name "vnalla007"
+        - git config --local user.email "venkatasivaramakrishna.nallagorla@cognizant.com"
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases

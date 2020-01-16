@@ -42,6 +42,8 @@ public class TimeEntryControllerTest {
 
         ResponseEntity response = controller.create(timeEntryToCreate);
 
+        System.out.println(" response.getBody() "+ response.getBody());
+        System.out.println(" expectedResult "+ expectedResult);
 
         verify(timeEntryRepository).create(timeEntryToCreate);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);

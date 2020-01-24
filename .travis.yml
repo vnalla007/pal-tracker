@@ -50,6 +50,7 @@ jobs:
         - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
         - scripts/migrate-databases.sh pal-tracker .
       deploy:
+        overwrite: true
         provider: cloudfoundry
         api: $CF_API_URL
         username: $CF_USERNAME

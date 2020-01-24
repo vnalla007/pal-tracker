@@ -21,7 +21,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository  {
 
         return timeEntry;
     }
-    public TimeEntry find(long timeEntryId){
+    public TimeEntry find(Long timeEntryId){
         System.out.println( "timeEntryId in find "+timeEntryId );
         return timeEntryList.get(timeEntryId);
                //return timeEntry;
@@ -32,13 +32,13 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository  {
             return new ArrayList<TimeEntry>(timeEntryList.values());
     }
 
-    public void delete(long timeEntryId){
+    public void delete(Long timeEntryId){
 
         timeEntryList.remove(timeEntryId);
 
     }
 
-    public TimeEntry update(long eq, TimeEntry any){
+    public TimeEntry update(Long eq, TimeEntry any){
         System.out.println("update in TimeEntry and id is  "+eq);
         System.out.println("TimeEntry any.getProjectId()  "+any.getProjectId() +"  any.getUserId() = "+ any.getUserId() + " any.getDate() = "+any.getDate() + " any.getHours() = " +any.getHours() );
 
